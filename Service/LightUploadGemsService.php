@@ -118,4 +118,22 @@ class LightUploadGemsService
     {
         PhpFileValidator::checkPhpFile($phpFile);
     }
+
+
+    /**
+     * Checks whether the given filename is valid (i.e. no "../" or "./" in it), and throws an exception if that's the case.
+     *
+     * @param string $filename
+     * @throws \Exception
+     */
+    public function checkFilename(string $filename)
+    {
+
+        if (
+            false !== strpos($filename, "../") ||
+            false !== strpos($filename, "./")
+        ) {
+            throw new LightUploadGemsException("Invalid filename \"$filename\", the string ./ or ../ was found in it.");
+        }
+    }
 }

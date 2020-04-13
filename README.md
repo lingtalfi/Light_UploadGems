@@ -59,6 +59,10 @@ upload_gems:
 History Log
 =============
 
+- 1.1.0 -- 2020-04-13
+
+    - add LightUploadGemsService->checkFilename method
+    
 - 1.0.0 -- 2020-04-13
 
     - initial commit

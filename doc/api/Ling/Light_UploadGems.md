@@ -28,6 +28,7 @@ Table of contents
     - [LightUploadGemsService::register](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/Service/LightUploadGemsService/register.md) &ndash; Registers the pluginName.
     - [LightUploadGemsService::getHelper](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/Service/LightUploadGemsService/getHelper.md) &ndash; Returns a GemHelperInterface associated with the given gemId, or throws an exception otherwise.
     - [LightUploadGemsService::checkPhpFile](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/Service/LightUploadGemsService/checkPhpFile.md) &ndash; Checks whether the given php file (usually from $_FILES) is erroneous, and throws an exception if it's the case.
+    - [LightUploadGemsService::checkFilename](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/Service/LightUploadGemsService/checkFilename.md) &ndash; Checks whether the given filename is valid (i.e.
 
 
 Dependencies
