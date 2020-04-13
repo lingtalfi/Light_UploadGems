@@ -49,7 +49,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [GemHelper::setFilename](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelper.php#L86-L89)
+See the source code for method [GemHelper::setFilename](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelper.php#L106-L109)
 
 
 See Also
@@ -57,5 +57,5 @@ See Also
 
 The [GemHelper](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper.md) class.
 
-Previous method: [setContainer](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/setContainer.md)<br>Next method: [applyNameTransform](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/applyNameTransform.md)<br>
+Previous method: [setTags](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/setTags.md)<br>Next method: [applyNameTransform](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/applyNameTransform.md)<br>
 

@@ -54,7 +54,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [GemHelper::applyNameTransform](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelper.php#L95-L105)
+See the source code for method [GemHelper::applyNameTransform](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelper.php#L115-L125)
 
 
 See Also

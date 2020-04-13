@@ -59,6 +59,10 @@ upload_gems:
 History Log
 =============
 
+- 1.2.0 -- 2020-04-13
+
+    - add GemHelper->setTags method
+    
 - 1.1.0 -- 2020-04-13
 
     - add LightUploadGemsService->checkFilename method

@@ -49,7 +49,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [GemHelper::setConfig](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelper.php#L61-L64)
+See the source code for method [GemHelper::setConfig](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelper.php#L70-L73)
 
 
 See Also

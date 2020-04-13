@@ -44,6 +44,14 @@ class GemHelper implements GemHelperInterface
 
 
     /**
+     * An array of tagName => tagValue.
+     *
+     * @var array
+     */
+    protected $tags;
+
+
+    /**
      * Builds the GemHelper instance.
      */
     public function __construct()
@@ -51,6 +59,7 @@ class GemHelper implements GemHelperInterface
         $this->filename = null;
         $this->container = null;
         $this->config = [];
+        $this->tags = [];
     }
 
 
@@ -72,6 +81,17 @@ class GemHelper implements GemHelperInterface
     {
         $this->container = $container;
     }
+
+    /**
+     * Sets the tags.
+     *
+     * @param array $tags
+     */
+    public function setTags(array $tags)
+    {
+        $this->tags = $tags;
+    }
+
 
 
 
@@ -257,6 +277,14 @@ class GemHelper implements GemHelperInterface
                         }
                     }
 
+                }
+
+
+                //--------------------------------------------
+                // custom tags
+                //--------------------------------------------
+                foreach ($this->tags as $name => $value) {
+                    $dst = str_replace("{$name}", $value, $dst);
                 }
 
 

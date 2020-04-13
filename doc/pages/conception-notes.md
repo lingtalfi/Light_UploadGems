@@ -1,6 +1,6 @@
 Light_UploadGems, conception notes
 =============
-2020-04-10
+2020-04-10 -> 2020-04-13
 
 
 
@@ -148,7 +148,7 @@ The **validation** configuration is as following (all optional):
 
 Copies
 ---------
-2020-04-10
+2020-04-10 -> 2020-04-13
 
 
 Our helper provides an **applyCopies** method, which let you copy the uploaded file any number of times, with the possibility
@@ -212,6 +212,21 @@ Each **copy** is a configuration array which contains the following (all optiona
 
 Note that the **basename**, **filename**,  **path** and **dir** properties might overlap themselves if you don't use them appropriately.
 Implementation wise they are executed in the following order: path else dir, then basename, then filename (i.e. filename will always prevail).
+
+
+In addition to this system, you can define some custom tags and provide them to the helper, and they will be converted in the
+destination path of each copy, before the file is actually copied.
+
+To use a tag, wrap its name with curly brackets like {that}.
+
+So for instance if the filepath of your copy ends up being **/my/path/{my_dir}/avatar{size}.png**, then the **my_dir** and **size** tags
+will be replaced with whatever value you defined in your tags, such as:
+
+- my_dir: "images/small"
+- size: "-64x64"
+
+
+
 
 
 
