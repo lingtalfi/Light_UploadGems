@@ -54,7 +54,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [LightUploadGemsService::getHelper](https://github.com/lingtalfi/Light_UploadGems/blob/master/Service/LightUploadGemsService.php#L88-L108)
+See the source code for method [LightUploadGemsService::getHelper](https://github.com/lingtalfi/Light_UploadGems/blob/master/Service/LightUploadGemsService.php#L88-L109)
 
 
 See Also

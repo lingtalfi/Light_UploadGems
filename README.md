@@ -1,6 +1,6 @@
 Light_UploadGems
 ===========
-2020-04-13
+2020-04-13 -> 2020-04-14
 
 
 
@@ -59,6 +59,10 @@ upload_gems:
 History Log
 =============
 
+- 1.3.0 -- 2020-04-14
+
+    - add apply and getConfig methods, and fix container not set
+    
 - 1.2.0 -- 2020-04-13
 
     - add GemHelper->setTags method

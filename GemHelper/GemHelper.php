@@ -11,6 +11,7 @@ use Ling\Bat\FileTool;
 use Ling\Bat\HashTool;
 use Ling\Bat\MimeTypeTool;
 use Ling\Bat\SmartCodeTool;
+use Ling\Bat\TagTool;
 use Ling\Light\ServiceContainer\LightServiceContainerInterface;
 use Ling\Light_AjaxFileUploadManager\Exception\LightAjaxFileUploadManagerException;
 use Ling\Light_UploadGems\Exception\LightUploadGemsException;
@@ -82,15 +83,6 @@ class GemHelper implements GemHelperInterface
         $this->container = $container;
     }
 
-    /**
-     * Sets the tags.
-     *
-     * @param array $tags
-     */
-    public function setTags(array $tags)
-    {
-        $this->tags = $tags;
-    }
 
 
 
@@ -106,6 +98,15 @@ class GemHelper implements GemHelperInterface
     public function setFilename(string $filename)
     {
         $this->filename = $filename;
+    }
+
+
+    /**
+     * @implementation
+     */
+    public function setTags(array $tags)
+    {
+        $this->tags = $tags;
     }
 
 
@@ -159,6 +160,10 @@ class GemHelper implements GemHelperInterface
     public function applyCopies(string $path): string
     {
         $this->check();
+
+        // reserved tag
+        $this->tags['app_dir'] = $this->container->getApplicationDir();
+
         $desiredCopyPath = $path;
         $copies = $this->config['copies'] ?? [];
         $last = null;
@@ -190,6 +195,9 @@ class GemHelper implements GemHelperInterface
 
 
             foreach ($copies as $copy) {
+
+
+                TagTool::applyTags($this->tags, $copy);
 
 
                 // filename trick part 2/3
@@ -228,17 +236,15 @@ class GemHelper implements GemHelperInterface
                 $dst = $previousPath;
                 if (array_key_exists("path", $copy)) {
                     $dst = $copy['path'];
-                    if ('/' === $dst[0] || 0 === strpos($dst, '{app_dir}')) { // absolute
-                        $dst = str_replace('{app_dir}', $this->container->getApplicationDir(), $dst);
-                    } else { // relative
+                    if ('/' !== $dst[0]) {
+                        // relative path
                         $dir = dirname($src);
                         $dst = $dir . "/" . $dst;
                     }
                 } elseif (array_key_exists('dir', $copy)) {
                     $dir = $copy['dir'];
-                    if ('/' === $dir[0] || 0 === strpos($dir, '{app_dir}')) { // absolute
-                        $dir = str_replace('{app_dir}', $this->container->getApplicationDir(), $dir);
-                    } else { // relative
+                    if ('/' !== $dir[0]) {
+                        // relative path
                         $srcDir = dirname($src);
                         $dir = $srcDir . "/" . $dir;
                     }
@@ -280,14 +286,6 @@ class GemHelper implements GemHelperInterface
                 }
 
 
-                //--------------------------------------------
-                // custom tags
-                //--------------------------------------------
-                foreach ($this->tags as $name => $value) {
-                    $dst = str_replace("{$name}", $value, $dst);
-                }
-
-
                 if (false === $isAlreadyCopied && $src !== $dst) {
                     FileSystemTool::copyFile($src, $dst);
                 }
@@ -309,6 +307,32 @@ class GemHelper implements GemHelperInterface
 
         return $desiredCopyPath;
     }
+
+
+    /**
+     * @implementation
+     */
+    public function apply(string $path): string
+    {
+        $this->applyNameTransform();
+        if (true !== ($result = $this->applyValidation($path))) {
+            $this->error($result);
+        }
+        return $this->applyCopies($path);
+    }
+
+
+    /**
+     * @implementation
+     */
+    public function getConfig(): array
+    {
+        return $this->config;
+    }
+
+
+
+
 
 
     //--------------------------------------------
@@ -560,4 +584,6 @@ class GemHelper implements GemHelperInterface
     {
         throw new LightUploadGemsException($msg);
     }
+
+
 }

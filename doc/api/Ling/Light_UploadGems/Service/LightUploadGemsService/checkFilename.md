@@ -54,7 +54,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [LightUploadGemsService::checkFilename](https://github.com/lingtalfi/Light_UploadGems/blob/master/Service/LightUploadGemsService.php#L129-L138)
+See the source code for method [LightUploadGemsService::checkFilename](https://github.com/lingtalfi/Light_UploadGems/blob/master/Service/LightUploadGemsService.php#L130-L139)
 
 
 See Also

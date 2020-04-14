@@ -7,7 +7,7 @@ GemHelper::setTags
 
 
 
-GemHelper::setTags — Sets the tags.
+GemHelper::setTags — Sets an array of tags that will be used in the applyCopies method.
 
 
 
@@ -21,7 +21,7 @@ public [GemHelper::setTags](https://github.com/lingtalfi/Light_UploadGems/blob/m
 
 
 
-Sets the tags.
+Sets an array of tags that will be used in the applyCopies method.
 
 
 
@@ -49,7 +49,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [GemHelper::setTags](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelper.php#L90-L93)
+See the source code for method [GemHelper::setTags](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelper.php#L107-L110)
 
 
 See Also
@@ -57,5 +57,5 @@ See Also
 
 The [GemHelper](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper.md) class.
 
-Previous method: [setContainer](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/setContainer.md)<br>Next method: [setFilename](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/setFilename.md)<br>
+Previous method: [setFilename](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/setFilename.md)<br>Next method: [applyNameTransform](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/applyNameTransform.md)<br>
 

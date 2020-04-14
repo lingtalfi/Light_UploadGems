@@ -95,6 +95,7 @@ class LightUploadGemsService
                 $file = $dir . "/" . $gemName . ".byml";
                 if (true === FileSystemTool::isDirectoryTraversalSafe($file, $dir, true)) {
                     $helper = new GemHelper();
+                    $helper->setContainer($this->container);
                     $helper->setConfig(BabyYamlUtil::readFile($file));
                     return $helper;
                 }
