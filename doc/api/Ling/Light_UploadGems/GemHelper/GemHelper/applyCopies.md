@@ -7,7 +7,7 @@ GemHelper::applyCopies
 
 
 
-GemHelper::applyCopies — Applies the copy configuration to the given path, and returns the path of the desired copy.
+GemHelper::applyCopies — Make the copies of the file which path was given, based on the defined configuration, and returns the path of the desired copy.
 
 
 
@@ -21,7 +21,7 @@ public [GemHelper::applyCopies](https://github.com/lingtalfi/Light_UploadGems/bl
 
 
 
-Applies the copy configuration to the given path, and returns the path of the desired copy.
+Make the copies of the file which path was given, based on the defined configuration, and returns the path of the desired copy.
 See more information in the [UploadGems conception notes](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/pages/conception-notes.md).
 
 
@@ -55,7 +55,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [GemHelper::applyCopies](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelper.php#L160-L309)
+See the source code for method [GemHelper::applyCopies](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelper.php#L163-L279)
 
 
 See Also
@@ -63,5 +63,5 @@ See Also
 
 The [GemHelper](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper.md) class.
 
-Previous method: [applyValidation](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/applyValidation.md)<br>Next method: [apply](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/apply.md)<br>
+Previous method: [applyValidation](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/applyValidation.md)<br>Next method: [getCustomConfig](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/getCustomConfig.md)<br>
 

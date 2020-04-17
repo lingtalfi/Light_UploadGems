@@ -1,6 +1,6 @@
 Light_UploadGems
 ===========
-2020-04-13 -> 2020-04-14
+2020-04-13 -> 2020-04-17
 
 
 
@@ -59,6 +59,10 @@ upload_gems:
 History Log
 =============
 
+- 1.4.0 -- 2020-04-17
+
+    - add name_validation section, and revisit some parts of the code, removed setFilename and apply methods
+    
 - 1.3.0 -- 2020-04-14
 
     - add apply and getConfig methods, and fix container not set

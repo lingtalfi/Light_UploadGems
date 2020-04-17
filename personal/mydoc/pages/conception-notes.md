@@ -1,6 +1,6 @@
 Light_UploadGems, conception notes
 =============
-2020-04-10 -> 2020-04-13
+2020-04-10 -> 2020-04-17
 
 
 
@@ -26,26 +26,23 @@ and basic actions (such as copying a file, redimensioning images, those kind of 
 
 The basic synopsis
 -----------
-2020-04-10
+2020-04-10 -> 2020-04-17
 
 
 When your script receives the gem id, he asks for our helper, using the **getHelper** method.
 
 Our service then returns the helper object, which contains all the methods that you can use.
 
-To start with, you should define the name of the uploaded file (does it come from the $_FILES array attached to the request,
-or is it one that you decide by yourself?).
 
-
-
-Once this is define, you can use the following methods (we recommend in that order):
+You can use the following methods:
 
 
 - **applyNameTransform** to update the name via some of our methods (such as randomization).
+- **applyNameValidation** to validate the name against some validation rules defined in the **name_validation** section of the gem (see the name_validation section below). 
 - **applyValidation** to validate the file against the validation rules defined in the gem (see the validation section below).
 - **applyCopies** to create copies of the uploaded file.
+- **getCustomConfig** to access the custom **config** section of the gem file.
 
-Eventually, use the **getConfig** method to access your configuration stored in the gem. 
 
 
 
@@ -82,24 +79,25 @@ That's where your **gem** file should be (otherwise an error will be thrown).
 
 The gem structure
 -------------
-2020-04-10
+2020-04-10 -> 2020-04-17
 
 
 A **gem** contains four parts (all optional):
 
 - name
+- name_validation
 - validation
 - copies
 - config
 
 
-The **name**, **copies** and **validation** parts are services provided by us, while the **config** part is where you put any 
+The **name**, **name_validation**, **copies** and **validation** parts are services provided by us, while the **config** part is where you put any 
 information your script needs to accomplish the upload task.
 
 
-The **name** part applies to the filename defined in the helper.
+The **name** and **name_validation** parts apply to the filename defined in the helper.
 
-Both the **copies** and the **validation** parts applies on the uploaded blob.
+Both the **copies** and the **validation** parts apply on the uploaded binary.
 
 
 Name
@@ -124,6 +122,25 @@ The **name** section contains an array of transformers, amongst the following:
                
 
 
+Name validation
+-------
+2020-04-17
+
+
+With the **name_validation** section of the gem, we provide you with a quick way to validate the filename of the uploaded file.
+
+The **validation** action is triggered manually by your script, using our helper's **applyNameValidation** method, which returns either true (in case of success),
+or an error message otherwise (if the validation fails).
+
+
+The **validation** configuration is as following (all optional):
+
+
+- maxFileNameLength: int, the maximum number of characters allowed for the filename.  
+- allowSlashInFileName: bool, whether slash characters are allowed in the filename.
+- extensions: string|array, the allowed extensions.
+
+
 
 Validation
 -------------
@@ -138,12 +155,8 @@ or an error message otherwise (if the validation fails).
 
 The **validation** configuration is as following (all optional):
 
-- maxFileSize: string, the maximum size for the file. You can put human like values (2M, 500ko, 1g, ...).  
-- extensions: string|array, the allowed extensions.  
+- maxFileSize: string, the maximum size for the file. You can put human like values (2M, 500ko, 1g, ...).    
 - mimeTypes: string|array, the allowed mime types.  
-- maxFileNameLength: int, the maximum number of characters allowed for the filename.  
-- allowSlashInFileName: bool, whether slash characters are allowed in the filename.
-
 
 
 Copies
@@ -233,13 +246,14 @@ will be replaced with whatever value you defined in your tags, such as:
 
 Config
 ----------
-2020-04-10
+2020-04-10 -> 2020-04-17
 
 
 This part contains an array which you define.
 
 It's just a storage facility for your script to use.
 
+You can access it using the **getCustomConfig** method.
 
  
 

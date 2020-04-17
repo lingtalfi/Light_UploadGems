@@ -46,7 +46,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [GemHelper::__construct](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelper.php#L58-L64)
+See the source code for method [GemHelper::__construct](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelper.php#L52-L57)
 
 
 See Also

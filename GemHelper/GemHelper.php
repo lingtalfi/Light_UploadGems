@@ -30,12 +30,6 @@ class GemHelper implements GemHelperInterface
      */
     protected $config;
 
-    /**
-     * This property holds the filename for this instance.
-     * @var string
-     */
-    protected $filename;
-
 
     /**
      * This property holds the container for this instance.
@@ -57,7 +51,6 @@ class GemHelper implements GemHelperInterface
      */
     public function __construct()
     {
-        $this->filename = null;
         $this->container = null;
         $this->config = [];
         $this->tags = [];
@@ -95,15 +88,6 @@ class GemHelper implements GemHelperInterface
     /**
      * @implementation
      */
-    public function setFilename(string $filename)
-    {
-        $this->filename = $filename;
-    }
-
-
-    /**
-     * @implementation
-     */
     public function setTags(array $tags)
     {
         $this->tags = $tags;
@@ -113,16 +97,38 @@ class GemHelper implements GemHelperInterface
     /**
      * @implementation
      */
-    public function applyNameTransform(): string
+    public function applyNameTransform(string $filename): string
     {
-        $this->check();
-        $name = $this->filename;
         $conf = $this->config['name'] ?? [];
         foreach ($conf as $transform) {
-            $name = $this->getTransformedName($name, $transform);
+            $filename = $this->getTransformedName($filename, $transform);
         }
-        $this->filename = $name;
-        return $name;
+        return $filename;
+    }
+
+
+    /**
+     * @implementation
+     */
+    public function applyNameValidation(string $filename)
+    {
+        $validationRules = $this->config['name_validation'] ?? [];
+        if ($validationRules) {
+
+            $errorMessage = null;
+            $isValid = true;
+
+            foreach ($validationRules as $name => $param) {
+                if (false === $this->executeNameValidationRule($name, $param, $filename, $errorMessage)) {
+                    $isValid = false;
+                    break;
+                }
+            }
+            if (false === $isValid) {
+                return $errorMessage;
+            }
+        }
+        return true;
     }
 
 
@@ -131,17 +137,14 @@ class GemHelper implements GemHelperInterface
      */
     public function applyValidation(string $path)
     {
-        $this->check();
         $validationRules = $this->config['validation'] ?? [];
         if ($validationRules) {
 
             $errorMessage = null;
             $isValid = true;
-            $filename = $this->filename ?? basename($path);
-
 
             foreach ($validationRules as $name => $param) {
-                if (false === $this->executeValidationRule($name, $param, $filename, $path, $errorMessage)) {
+                if (false === $this->executeValidationRule($name, $param, $path, $errorMessage)) {
                     $isValid = false;
                     break;
                 }
@@ -159,8 +162,6 @@ class GemHelper implements GemHelperInterface
      */
     public function applyCopies(string $path): string
     {
-        $this->check();
-
         // reserved tag
         $this->tags['app_dir'] = $this->container->getApplicationDir();
 
@@ -172,26 +173,9 @@ class GemHelper implements GemHelperInterface
 
             $fileToRemove = null;
 
-            /**
-             * Filename trick part 1/3
-             *
-             * If the user set a filename, we create a tmp file so that the logic of this script is left intact and easier to follow,
-             * we remove that tmp file in the end so that it's transparent to the caller.
-             *
-             * Also, if the filename contains slashes (and slashes are allowed), we need to preserve it, hence the
-             * second and third parts of the trick below.
-             *
-             */
-            if (null !== $this->filename) {
-                $path = FileSystemTool::mkTmpCopy($path, $this->filename);
-                $fileToRemove = $path;
-            }
-
 
             $dstPaths = [$path];
             $previousPath = $path;
-
-            $firstCopy = true;
 
 
             foreach ($copies as $copy) {
@@ -199,14 +183,6 @@ class GemHelper implements GemHelperInterface
 
                 TagTool::applyTags($this->tags, $copy);
 
-
-                // filename trick part 2/3
-                if (true === $firstCopy) {
-                    $firstCopy = false;
-                    if (null !== $this->filename && false === array_key_exists('filename', $copy)) {
-                        $copy['filename'] = $this->filename;
-                    }
-                }
 
 
                 //--------------------------------------------
@@ -218,12 +194,6 @@ class GemHelper implements GemHelperInterface
                     if (array_key_exists($index, $dstPaths)) {
 
                         $src = $dstPaths[$index];
-
-                        // filename trick part 3/3
-                        if (0 === (int)$index && null !== $this->filename && false === array_key_exists('filename', $copy)) {
-                            $copy["filename"] = $this->filename;
-                        }
-
 
                     } else {
                         $this->error("Index \"$index\" not found in the current copies.");
@@ -309,25 +279,13 @@ class GemHelper implements GemHelperInterface
     }
 
 
-    /**
-     * @implementation
-     */
-    public function apply(string $path): string
-    {
-        $this->applyNameTransform();
-        if (true !== ($result = $this->applyValidation($path))) {
-            $this->error($result);
-        }
-        return $this->applyCopies($path);
-    }
-
 
     /**
      * @implementation
      */
-    public function getConfig(): array
+    public function getCustomConfig(): array
     {
-        return $this->config;
+        return $this->config['config'] ?? [];
     }
 
 
@@ -338,34 +296,80 @@ class GemHelper implements GemHelperInterface
     //--------------------------------------------
     //
     //--------------------------------------------
-    /**
-     * Throws an exception if the object is not properly configured.
-     * @throws \Exception
-     */
-    private function check()
-    {
-        if (null === $this->filename) {
-            throw new LightUploadGemsException("Filename not defined.");
-        }
-    }
-
 
     /**
-     * Check whether the given phpFileItem is valid according to the given rule name and parameter,
+     * Check whether the given filename is valid according to the given rule name and parameter,
      * and return a boolean result.
-     * If the file item is not valid, the error message is set to explain the cause of the validation problem.
+     *
+     * If not valid, the error message is set to explain the cause of the validation problem.
      *
      *
      * @param string $validationRuleName
      * @param mixed $parameter
      * @param string $filename
+     * @param string|null $errorMessage
+     * @return bool
+     * @throws \Exception
+     */
+    private function executeNameValidationRule(string $validationRuleName, $parameter, string $filename, string &$errorMessage = null): bool
+    {
+        switch ($validationRuleName) {
+            case "maxFileNameLength":
+                $maxFileNameLength = (int)$parameter;
+                $fileLength = strlen($filename);
+                if ($fileLength > $maxFileNameLength) {
+                    $errorMessage = "Validation error: the filename \"$filename\" contains too many characters. The maximum number of characters allowed is $maxFileNameLength (The uploaded filename contains $fileLength characters).";
+                    return false;
+                }
+                break;
+            case "allowSlashInFilename":
+                if (false === $parameter) {
+                    if (false !== strpos($filename, "/")) {
+                        $errorMessage = "Validation error: the filename \"$filename\" contains the forbidden slash character.";
+                        return false;
+                    }
+                }
+                break;
+            case "extensions":
+                $allowedExtensions = $parameter;
+                if (false === is_array($allowedExtensions)) {
+                    $allowedExtensions = [$allowedExtensions];
+                }
+                $fileExt = strtolower(FileSystemTool::getFileExtension($filename));
+
+                if (false === in_array($fileExt, $allowedExtensions, true)) {
+                    $sList = implode(", ", $allowedExtensions);
+                    $errorMessage = "Validation error: the file \"$filename\" doesn't have an accepted file extension. The allowed file extensions are $sList.";
+                    return false;
+                }
+
+                break;
+            default:
+                throw new LightAjaxFileUploadManagerException("Unknown validation rule: $validationRuleName (with file name=\"$filename\").");
+                break;
+        }
+        return true;
+    }
+
+
+    /**
+     * Check whether the file (which path is given) is valid according to the given rule name and parameter,
+     * and return a boolean result.
+     *
+     * If the file is not valid, the error message is set to explain the cause of the validation problem.
+     *
+     *
+     * @param string $validationRuleName
+     * @param mixed $parameter
      * @param string $path
      * @param string|null $errorMessage
      * @return bool
      * @throws \Exception
      */
-    private function executeValidationRule(string $validationRuleName, $parameter, string $filename, string $path, string &$errorMessage = null): bool
+    private function executeValidationRule(string $validationRuleName, $parameter, string $path, string &$errorMessage = null): bool
     {
+        $filename = basename($path);
+
         switch ($validationRuleName) {
             case "maxFileSize":
                 $maxFileSize = ConvertTool::convertHumanSizeToBytes($parameter);
@@ -391,36 +395,6 @@ class GemHelper implements GemHelperInterface
                     return false;
                 }
 
-                break;
-            case "extensions":
-                $allowedExtensions = $parameter;
-                if (false === is_array($allowedExtensions)) {
-                    $allowedExtensions = [$allowedExtensions];
-                }
-                $fileExt = strtolower(FileSystemTool::getFileExtension($filename));
-
-                if (false === in_array($fileExt, $allowedExtensions, true)) {
-                    $sList = implode(", ", $allowedExtensions);
-                    $errorMessage = "Validation error: the file \"$filename\" doesn't have an accepted file extension. The allowed file extensions are $sList.";
-                    return false;
-                }
-
-                break;
-            case "maxFileNameLength":
-                $maxFileNameLength = (int)$parameter;
-                $fileLength = strlen($filename);
-                if ($fileLength > $maxFileNameLength) {
-                    $errorMessage = "Validation error: the filename \"$filename\" contains too many characters. The maximum number of characters allowed is $maxFileNameLength (The uploaded filename contains $fileLength characters).";
-                    return false;
-                }
-                break;
-            case "allowSlashInFilename":
-                if (false === $parameter) {
-                    if (false !== strpos($filename, "/")) {
-                        $errorMessage = "Validation error: the filename \"$filename\" contains the forbidden slash character.";
-                        return false;
-                    }
-                }
                 break;
             default:
                 throw new LightAjaxFileUploadManagerException("Unknown validation rule: $validationRuleName (with file name=\"$filename\").");

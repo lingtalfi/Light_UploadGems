@@ -7,7 +7,7 @@ GemHelperInterface::applyCopies
 
 
 
-GemHelperInterface::applyCopies — Applies the copy configuration to the given path, and returns the path of the desired copy.
+GemHelperInterface::applyCopies — Make the copies of the file which path was given, based on the defined configuration, and returns the path of the desired copy.
 
 
 
@@ -21,7 +21,7 @@ abstract public [GemHelperInterface::applyCopies](https://github.com/lingtalfi/L
 
 
 
-Applies the copy configuration to the given path, and returns the path of the desired copy.
+Make the copies of the file which path was given, based on the defined configuration, and returns the path of the desired copy.
 See more information in the [UploadGems conception notes](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/pages/conception-notes.md).
 
 
@@ -55,7 +55,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [GemHelperInterface::applyCopies](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelperInterface.php#L86-L86)
+See the source code for method [GemHelperInterface::applyCopies](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelperInterface.php#L74-L74)
 
 
 See Also

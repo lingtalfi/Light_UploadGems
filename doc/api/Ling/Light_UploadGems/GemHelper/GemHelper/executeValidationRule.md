@@ -16,14 +16,15 @@ Description
 ================
 
 
-private [GemHelper::executeValidationRule](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/executeValidationRule.md)(string $validationRuleName, $parameter, string $filename, string $path, ?string &$errorMessage = null) : bool
+private [GemHelper::executeValidationRule](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/executeValidationRule.md)(string $validationRuleName, $parameter, string $path, ?string &$errorMessage = null) : bool
 
 
 
 
-Check whether the given phpFileItem is valid according to the given rule name and parameter,
+Check whether the file (which path is given) is valid according to the given rule name and parameter,
 and return a boolean result.
-If the file item is not valid, the error message is set to explain the cause of the validation problem.
+
+If the file is not valid, the error message is set to explain the cause of the validation problem.
 
 
 
@@ -37,10 +38,6 @@ Parameters
     
 
 - parameter
-
-    
-
-- filename
 
     
 
@@ -72,7 +69,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [GemHelper::executeValidationRule](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelper.php#L367-L430)
+See the source code for method [GemHelper::executeValidationRule](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelper.php#L369-L404)
 
 
 See Also
@@ -80,5 +77,5 @@ See Also
 
 The [GemHelper](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper.md) class.
 
-Previous method: [check](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/check.md)<br>Next method: [getTransformedName](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/getTransformedName.md)<br>
+Previous method: [executeNameValidationRule](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/executeNameValidationRule.md)<br>Next method: [getTransformedName](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/getTransformedName.md)<br>
 

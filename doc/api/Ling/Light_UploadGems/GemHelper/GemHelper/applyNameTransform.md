@@ -7,7 +7,7 @@ GemHelper::applyNameTransform
 
 
 
-GemHelper::applyNameTransform — the transformed file name.
+GemHelper::applyNameTransform — Applies the defined name transformations to the given filename and returns the transformed filename.
 
 
 
@@ -16,13 +16,12 @@ Description
 ================
 
 
-public [GemHelper::applyNameTransform](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/applyNameTransform.md)() : void
+public [GemHelper::applyNameTransform](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/applyNameTransform.md)(string $filename) : string
 
 
 
 
-Applies the name transformations defined in the internal config, and returns
-the transformed file name.
+Applies the defined name transformations to the given filename and returns the transformed filename.
 
 If an error occurs, an exception is thrown.
 
@@ -32,13 +31,16 @@ If an error occurs, an exception is thrown.
 Parameters
 ================
 
-This method has no parameters.
+
+- filename
+
+    
 
 
 Return values
 ================
 
-Returns void.
+Returns string.
 
 
 Exceptions thrown
@@ -54,7 +56,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [GemHelper::applyNameTransform](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelper.php#L116-L126)
+See the source code for method [GemHelper::applyNameTransform](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelper.php#L100-L107)
 
 
 See Also
@@ -62,5 +64,5 @@ See Also
 
 The [GemHelper](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper.md) class.
 
-Previous method: [setTags](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/setTags.md)<br>Next method: [applyValidation](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/applyValidation.md)<br>
+Previous method: [setTags](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/setTags.md)<br>Next method: [applyNameValidation](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/applyNameValidation.md)<br>
 

@@ -7,7 +7,7 @@ GemHelperInterface::applyNameTransform
 
 
 
-GemHelperInterface::applyNameTransform — the transformed file name.
+GemHelperInterface::applyNameTransform — Applies the defined name transformations to the given filename and returns the transformed filename.
 
 
 
@@ -16,13 +16,12 @@ Description
 ================
 
 
-abstract public [GemHelperInterface::applyNameTransform](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelperInterface/applyNameTransform.md)() : void
+abstract public [GemHelperInterface::applyNameTransform](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelperInterface/applyNameTransform.md)(string $filename) : string
 
 
 
 
-Applies the name transformations defined in the internal config, and returns
-the transformed file name.
+Applies the defined name transformations to the given filename and returns the transformed filename.
 
 If an error occurs, an exception is thrown.
 
@@ -32,13 +31,16 @@ If an error occurs, an exception is thrown.
 Parameters
 ================
 
-This method has no parameters.
+
+- filename
+
+    
 
 
 Return values
 ================
 
-Returns void.
+Returns string.
 
 
 Exceptions thrown
@@ -54,7 +56,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [GemHelperInterface::applyNameTransform](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelperInterface.php#L59-L59)
+See the source code for method [GemHelperInterface::applyNameTransform](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelperInterface.php#L37-L37)
 
 
 See Also
@@ -62,5 +64,5 @@ See Also
 
 The [GemHelperInterface](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelperInterface.md) class.
 
-Previous method: [getConfig](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelperInterface/getConfig.md)<br>Next method: [applyValidation](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelperInterface/applyValidation.md)<br>
+Previous method: [getCustomConfig](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelperInterface/getCustomConfig.md)<br>Next method: [applyNameValidation](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelperInterface/applyNameValidation.md)<br>
 

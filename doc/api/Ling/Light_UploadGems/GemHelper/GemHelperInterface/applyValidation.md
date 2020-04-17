@@ -21,7 +21,7 @@ abstract public [GemHelperInterface::applyValidation](https://github.com/lingtal
 
 
 
-Applies the validation constraints defined in the internal config, and returns
+Applies the defined validation constraints to the file which path is given, and returns
 true if they all pass, or returns the error message returned by the first failing constraint otherwise.
 
 
@@ -50,7 +50,7 @@ Returns true | string.
 
 Source Code
 ===========
-See the source code for method [GemHelperInterface::applyValidation](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelperInterface.php#L72-L72)
+See the source code for method [GemHelperInterface::applyValidation](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelperInterface.php#L60-L60)
 
 
 See Also
@@ -58,5 +58,5 @@ See Also
 
 The [GemHelperInterface](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelperInterface.md) class.
 
-Previous method: [applyNameTransform](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelperInterface/applyNameTransform.md)<br>Next method: [applyCopies](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelperInterface/applyCopies.md)<br>
+Previous method: [applyNameValidation](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelperInterface/applyNameValidation.md)<br>Next method: [applyCopies](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelperInterface/applyCopies.md)<br>
 

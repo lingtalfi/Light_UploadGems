@@ -65,7 +65,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [GemHelper::transformImage](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelper.php#L549-L574)
+See the source code for method [GemHelper::transformImage](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelper.php#L523-L548)
 
 
 See Also
