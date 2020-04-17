@@ -184,7 +184,6 @@ class GemHelper implements GemHelperInterface
                 TagTool::applyTags($this->tags, $copy);
 
 
-
                 //--------------------------------------------
                 // source
                 //--------------------------------------------
@@ -279,7 +278,6 @@ class GemHelper implements GemHelperInterface
     }
 
 
-
     /**
      * @implementation
      */
@@ -287,6 +285,23 @@ class GemHelper implements GemHelperInterface
     {
         return $this->config['config'] ?? [];
     }
+
+
+    /**
+     * @implementation
+     */
+    public function getCustomConfigValue(string $key, bool $throwEx = true)
+    {
+        $conf = $this->getCustomConfig();
+        if (array_key_exists($key, $conf)) {
+            return $conf[$key];
+        }
+        if (true === $throwEx) {
+            $this->error("Key not found \"$key\" in the config.");
+        }
+        return null;
+    }
+
 
 
 

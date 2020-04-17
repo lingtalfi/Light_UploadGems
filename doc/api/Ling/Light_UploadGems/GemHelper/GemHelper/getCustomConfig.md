@@ -46,7 +46,7 @@ Returns array.
 
 Source Code
 ===========
-See the source code for method [GemHelper::getCustomConfig](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelper.php#L286-L289)
+See the source code for method [GemHelper::getCustomConfig](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelper.php#L284-L287)
 
 
 See Also
@@ -54,5 +54,5 @@ See Also
 
 The [GemHelper](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper.md) class.
 
-Previous method: [applyCopies](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/applyCopies.md)<br>Next method: [executeNameValidationRule](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/executeNameValidationRule.md)<br>
+Previous method: [applyCopies](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/applyCopies.md)<br>Next method: [getCustomConfigValue](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/getCustomConfigValue.md)<br>
 

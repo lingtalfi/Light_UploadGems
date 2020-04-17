@@ -59,6 +59,10 @@ upload_gems:
 History Log
 =============
 
+- 1.5.0 -- 2020-04-17
+
+    - add GemHelperInterface->getCustomConfigValue method
+    
 - 1.4.0 -- 2020-04-17
 
     - add name_validation section, and revisit some parts of the code, removed setFilename and apply methods

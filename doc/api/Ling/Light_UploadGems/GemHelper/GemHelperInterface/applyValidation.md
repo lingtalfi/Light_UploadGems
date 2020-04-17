@@ -50,7 +50,7 @@ Returns true | string.
 
 Source Code
 ===========
-See the source code for method [GemHelperInterface::applyValidation](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelperInterface.php#L60-L60)
+See the source code for method [GemHelperInterface::applyValidation](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelperInterface.php#L75-L75)
 
 
 See Also

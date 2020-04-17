@@ -25,6 +25,21 @@ interface GemHelperInterface
      */
     public function getCustomConfig(): array;
 
+
+    /**
+     * Returns the custom config value corresponding to the given key.
+     *
+     * If the key doesn't exist:
+     * - it throws an exception if the throwEx flag is set to true
+     * - it returns null if the throwEx flag is set to false
+     *
+     *
+     * @param string $key
+     * @param bool $throwEx
+     * @return mixed
+     */
+    public function getCustomConfigValue(string $key, bool $throwEx = true);
+
     /**
      * Applies the defined name transformations to the given filename and returns the transformed filename.
      *
