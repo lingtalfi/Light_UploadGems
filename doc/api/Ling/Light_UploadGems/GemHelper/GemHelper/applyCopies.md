@@ -55,7 +55,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [GemHelper::applyCopies](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelper.php#L163-L278)
+See the source code for method [GemHelper::applyCopies](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelper.php#L188-L303)
 
 
 See Also
@@ -63,5 +63,5 @@ See Also
 
 The [GemHelper](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper.md) class.
 
-Previous method: [applyValidation](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/applyValidation.md)<br>Next method: [getCustomConfig](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/getCustomConfig.md)<br>
+Previous method: [applyChunkValidation](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/applyChunkValidation.md)<br>Next method: [getCustomConfig](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/getCustomConfig.md)<br>
 

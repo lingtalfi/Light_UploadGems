@@ -1,6 +1,6 @@
 Light_UploadGems
 ===========
-2020-04-13 -> 2020-04-17
+2020-04-13 -> 2020-05-14
 
 
 
@@ -59,6 +59,10 @@ upload_gems:
 History Log
 =============
 
+- 1.6.0 -- 2020-05-14
+
+    - add GemHelperInterface->applyChunkValidation method
+    
 - 1.5.0 -- 2020-04-17
 
     - add GemHelperInterface->getCustomConfigValue method

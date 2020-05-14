@@ -54,7 +54,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [GemHelper::error](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelper.php#L572-L575)
+See the source code for method [GemHelper::error](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelper.php#L597-L600)
 
 
 See Also

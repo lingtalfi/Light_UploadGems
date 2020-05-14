@@ -63,6 +63,19 @@ interface GemHelperInterface
 
 
     /**
+     * Applies the defined validation constraints to the chunk which path is given, and returns
+     * true if they all pass, or returns the error message returned by the first failing constraint otherwise.
+     *
+     *
+     * @param string $path
+     * The absolute path to the chunk to validate.
+     *
+     * @return true|string
+     */
+    public function applyChunkValidation(string $path);
+
+
+    /**
      * Applies the defined validation constraints to the file which path is given, and returns
      * true if they all pass, or returns the error message returned by the first failing constraint otherwise.
      *

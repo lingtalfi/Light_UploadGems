@@ -160,6 +160,31 @@ class GemHelper implements GemHelperInterface
     /**
      * @implementation
      */
+    public function applyChunkValidation(string $path)
+    {
+        $validationRules = $this->config['chunk_validation'] ?? [];
+        if ($validationRules) {
+
+            $errorMessage = null;
+            $isValid = true;
+
+            foreach ($validationRules as $name => $param) {
+                if (false === $this->executeValidationRule($name, $param, $path, $errorMessage)) {
+                    $isValid = false;
+                    break;
+                }
+            }
+            if (false === $isValid) {
+                return $errorMessage;
+            }
+        }
+        return true;
+    }
+
+
+    /**
+     * @implementation
+     */
     public function applyCopies(string $path): string
     {
         // reserved tag
