@@ -16,7 +16,7 @@ Description
 ================
 
 
-public [GemHelper::applyCopies](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/applyCopies.md)(string $path) : string
+public [GemHelper::applyCopies](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/applyCopies.md)(string $path, ?array $options = []) : string
 
 
 
@@ -34,6 +34,19 @@ Parameters
 - path
 
     The absolute path to the file to copy.
+
+- options
+
+    - onDstReady: a callable triggered when the destination path is set.
+         This is triggered before each copy is actually written to the destination path.
+         Use this callable to change the destination path for each copy.
+         The callable signature is:
+         - onDstReady ( string &$dst, int $copyIndex, array $copyItem )
+             With:
+             - dst: the destination path were the copy is going to be written (you can change it)
+             - copyIndex: the numerical index of this copy
+             - copyItem: the copy configuration item (from the gem config)
+     - onBeforeCopy: a callable triggered if there is at least one copy, and before the first copy is processed.
 
 
 Return values
@@ -55,7 +68,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [GemHelper::applyCopies](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelper.php#L188-L303)
+See the source code for method [GemHelper::applyCopies](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelper.php#L188-L319)
 
 
 See Also

@@ -57,7 +57,7 @@ Returns mixed.
 
 Source Code
 ===========
-See the source code for method [GemHelper::getCustomConfigValue](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelper.php#L318-L328)
+See the source code for method [GemHelper::getCustomConfigValue](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelper.php#L334-L344)
 
 
 See Also

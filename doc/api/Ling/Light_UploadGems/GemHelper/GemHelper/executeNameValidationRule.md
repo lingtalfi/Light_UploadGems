@@ -69,7 +69,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [GemHelper::executeNameValidationRule](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelper.php#L354-L392)
+See the source code for method [GemHelper::executeNameValidationRule](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelper.php#L370-L408)
 
 
 See Also

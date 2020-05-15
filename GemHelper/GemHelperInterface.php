@@ -96,9 +96,23 @@ interface GemHelperInterface
      * @param string $path
      * The absolute path to the file to copy.
      *
+     * @param array $options
+     *      - onDstReady: a callable triggered when the destination path is set.
+     *          This is triggered before each copy is actually written to the destination path.
+     *          Use this callable to change the destination path for each copy.
+     *          The callable signature is:
+     *          - onDstReady ( string &$dst, int $copyIndex, array $copyItem )
+     *              With:
+     *              - dst: the destination path were the copy is going to be written (you can change it)
+     *              - copyIndex: the numerical index of this copy
+     *              - copyItem: the copy configuration item (from the gem config)
+     *      - onBeforeCopy: a callable triggered if there is at least one copy, and before the first copy is processed.
+     *
+     *
+     *
      * @return string
      * @throws \Exception
      */
-    public function applyCopies(string $path): string;
+    public function applyCopies(string $path, array $options = []): string;
 
 }

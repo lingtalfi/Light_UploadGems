@@ -185,16 +185,24 @@ class GemHelper implements GemHelperInterface
     /**
      * @implementation
      */
-    public function applyCopies(string $path): string
+    public function applyCopies(string $path, array $options = []): string
     {
         // reserved tag
         $this->tags['app_dir'] = $this->container->getApplicationDir();
+
+
+        $onDstReady = $options['onDstReady'] ?? null;
 
         $desiredCopyPath = $path;
         $copies = $this->config['copies'] ?? [];
         $last = null;
 
         if ($copies) {
+
+            $onBeforeCopy = $options['onBeforeCopy'] ?? null;
+            if (is_callable($onBeforeCopy)) {
+                $onBeforeCopy();
+            }
 
             $fileToRemove = null;
 
@@ -203,7 +211,7 @@ class GemHelper implements GemHelperInterface
             $previousPath = $path;
 
 
-            foreach ($copies as $copy) {
+            foreach ($copies as $k => $copy) {
 
 
                 TagTool::applyTags($this->tags, $copy);
@@ -255,6 +263,14 @@ class GemHelper implements GemHelperInterface
                 if (array_key_exists('filename', $copy)) {
                     $dir = dirname($dst);
                     $dst = $dir . "/" . $copy['filename'];
+                }
+
+
+                //--------------------------------------------
+                // on dst ready
+                //--------------------------------------------
+                if (is_callable($onDstReady)) {
+                    $onDstReady($dst, $k, $copy);
                 }
 
 
@@ -568,7 +584,10 @@ class GemHelper implements GemHelperInterface
                 $width = $transformerParams[0] ?? null;
                 $height = $transformerParams[0] ?? null;
 
-                $extension = FileSystemTool::getFileExtension($dstPath);
+
+                $type = MimeTypeTool::getMimeType($srcPath);
+                $extension = substr($type, 6); // strip image/ from the mime type
+
                 $options = [
                     "extension" => $extension,
                 ];

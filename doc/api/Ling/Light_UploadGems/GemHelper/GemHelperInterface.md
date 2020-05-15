@@ -4,7 +4,7 @@
 
 The GemHelperInterface class
 ================
-2020-04-13 --> 2020-05-14
+2020-04-13 --> 2020-05-15
 
 
 
@@ -32,7 +32,7 @@ abstract class <span class="pl-k">GemHelperInterface</span>  {
     - abstract public [applyNameValidation](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelperInterface/applyNameValidation.md)(string $filename) : true | string
     - abstract public [applyChunkValidation](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelperInterface/applyChunkValidation.md)(string $path) : true | string
     - abstract public [applyValidation](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelperInterface/applyValidation.md)(string $path) : true | string
-    - abstract public [applyCopies](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelperInterface/applyCopies.md)(string $path) : string
+    - abstract public [applyCopies](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelperInterface/applyCopies.md)(string $path, ?array $options = []) : string
 
 }
 

@@ -1,6 +1,6 @@
 Light_UploadGems
 ===========
-2020-04-13 -> 2020-05-14
+2020-04-13 -> 2020-05-15
 
 
 
@@ -59,6 +59,10 @@ upload_gems:
 History Log
 =============
 
+- 1.7.0 -- 2020-05-15
+
+    - add GemHelperInterface->applyCopies options parameter
+    
 - 1.6.0 -- 2020-05-14
 
     - add GemHelperInterface->applyChunkValidation method
