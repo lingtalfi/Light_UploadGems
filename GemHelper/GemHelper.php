@@ -191,6 +191,8 @@ class GemHelper implements GemHelperInterface
         $this->tags['app_dir'] = $this->container->getApplicationDir();
 
 
+        $baseDir = dirname($path);
+
         $onDstReady = $options['onDstReady'] ?? null;
 
         $desiredCopyPath = $path;
@@ -213,6 +215,7 @@ class GemHelper implements GemHelperInterface
 
             foreach ($copies as $k => $copy) {
 
+                $copyBaseDir = $baseDir;
 
                 TagTool::applyTags($this->tags, $copy);
 
@@ -240,29 +243,29 @@ class GemHelper implements GemHelperInterface
                     $dst = $copy['path'];
                     if ('/' !== $dst[0]) {
                         // relative path
-                        $dir = dirname($src);
+                        $dir = $baseDir;
                         $dst = $dir . "/" . $dst;
                     }
                 } elseif (array_key_exists('dir', $copy)) {
                     $dir = $copy['dir'];
                     if ('/' !== $dir[0]) {
                         // relative path
-                        $srcDir = dirname($src);
+                        $srcDir = $baseDir;
                         $dir = $srcDir . "/" . $dir;
                     }
+                    $copyBaseDir = $dir;
+
                     $basename = basename($dst);
                     $dst = $dir . "/" . $basename;
                 }
 
                 if (array_key_exists('basename', $copy)) {
-                    $dir = dirname($dst);
                     $ext = FileSystemTool::getFileExtension($dst);
-                    $dst = $dir . "/" . $copy['basename'] . "." . $ext;
+                    $dst = $copyBaseDir . "/" . $copy['basename'] . "." . $ext;
                 }
 
                 if (array_key_exists('filename', $copy)) {
-                    $dir = dirname($dst);
-                    $dst = $dir . "/" . $copy['filename'];
+                    $dst = $copyBaseDir . "/" . $copy['filename'];
                 }
 
 
