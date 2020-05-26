@@ -194,6 +194,7 @@ class GemHelper implements GemHelperInterface
         $baseDir = dirname($path);
 
         $onDstReady = $options['onDstReady'] ?? null;
+        $onCopyAfter = $options['onCopyAfter'] ?? null;
 
         $desiredCopyPath = $path;
         $copies = $this->config['copies'] ?? [];
@@ -305,6 +306,9 @@ class GemHelper implements GemHelperInterface
                 $previousPath = $dst;
                 $desiredCopyPath = $dst;
                 $dstPaths[] = $dst;
+                if(is_callable($onCopyAfter)){
+                    $onCopyAfter($dst, $k, $copy);
+                }
 
             }
 

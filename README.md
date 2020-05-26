@@ -1,6 +1,6 @@
 Light_UploadGems
 ===========
-2020-04-13 -> 2020-05-25
+2020-04-13 -> 2020-05-26
 
 
 
@@ -59,6 +59,10 @@ upload_gems:
 History Log
 =============
 
+- 1.8.0 -- 2020-05-26
+
+    - add GemHelperInterface->applyCopies onCopyAfter option
+    
 - 1.7.1 -- 2020-05-25
 
     - fix GemHelper->applyCopies re-using the previous copy's base dir instead of the source file's base dir

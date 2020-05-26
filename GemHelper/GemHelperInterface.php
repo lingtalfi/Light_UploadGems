@@ -107,7 +107,13 @@ interface GemHelperInterface
      *              - copyIndex: the numerical index of this copy
      *              - copyItem: the copy configuration item (from the gem config)
      *      - onBeforeCopy: a callable triggered if there is at least one copy, and before the first copy is processed.
-     *
+     *      - onCopyAfter: a callable triggered after the copy has been copied.
+     *          The callable signature is:
+     *          - onCopyAfter ( string $dst, int $copyIndex, array $copyItem )
+     *              With:
+     *              - dst: the destination path were the copy was written to
+     *              - copyIndex: the numerical index of this copy
+     *              - copyItem: the copy configuration item (from the gem config)
      *
      *
      * @return string

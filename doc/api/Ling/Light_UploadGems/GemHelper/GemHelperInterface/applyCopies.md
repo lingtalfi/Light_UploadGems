@@ -47,6 +47,13 @@ Parameters
              - copyIndex: the numerical index of this copy
              - copyItem: the copy configuration item (from the gem config)
      - onBeforeCopy: a callable triggered if there is at least one copy, and before the first copy is processed.
+     - onCopyAfter: a callable triggered after the copy has been copied.
+         The callable signature is:
+         - onCopyAfter ( string $dst, int $copyIndex, array $copyItem )
+             With:
+             - dst: the destination path were the copy was written to
+             - copyIndex: the numerical index of this copy
+             - copyItem: the copy configuration item (from the gem config)
 
 
 Return values
@@ -68,7 +75,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [GemHelperInterface::applyCopies](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelperInterface.php#L116-L116)
+See the source code for method [GemHelperInterface::applyCopies](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelperInterface.php#L122-L122)
 
 
 See Also
