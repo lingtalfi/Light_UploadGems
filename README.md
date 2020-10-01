@@ -1,6 +1,6 @@
 Light_UploadGems
 ===========
-2020-04-13 -> 2020-05-26
+2020-04-13 -> 2020-10-01
 
 
 
@@ -59,6 +59,10 @@ upload_gems:
 History Log
 =============
 
+- 1.8.1 -- 2020-10-01
+
+    - update conception notes, grammar fixes
+    
 - 1.8.0 -- 2020-05-26
 
     - add GemHelperInterface->applyCopies onCopyAfter option

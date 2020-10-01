@@ -1,6 +1,6 @@
 Light_UploadGems, conception notes
 =============
-2020-04-10 -> 2020-05-14
+2020-04-10 -> 2020-10-01
 
 
 
@@ -10,17 +10,17 @@ It's used when the user uploads a file via a js client, and you want to process 
 
 It helps you organize your data in **gems**.
 
-Each **gem** is a [babyYaml](https://github.com/lingtalfi/BabyYaml) file which contain the information necessary for your server
+Each **gem** is a [babyYaml](https://github.com/lingtalfi/BabyYaml) file which contains the information necessary for your server
 side script to do the upload in the way you want.
 
 Basically, you can put information that you want in a gem, and the client refers to it with an id.
 
-Our service basically helps getting access to those gems. 
-The **gems** are put in a directory chosen by your plugin, the default is **${app_dir}/config/data/${yourPluginName}/Light_UploadGems**, but
+Our service basically helps access those gems. 
+The **gems** are usually put in a directory chosen by your plugin, the default is **${app_dir}/config/data/${yourPluginName}/Light_UploadGems**, but
 you can change it.
 
 In addition to that, we provide useful tools that can speed up your development time, such as validation tools on the uploaded blob,
-and basic actions (such as copying a file, redimensioning images, those kind of things...).
+and basic actions (such as copying a file, redimensioning images, these kinds of things...).
 
 
 
