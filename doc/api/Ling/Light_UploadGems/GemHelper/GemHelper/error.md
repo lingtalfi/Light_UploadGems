@@ -62,5 +62,5 @@ See Also
 
 The [GemHelper](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper.md) class.
 
-Previous method: [transformImage](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/transformImage.md)<br>
+Previous method: [extractFunctionInfo](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/extractFunctionInfo.md)<br>
 

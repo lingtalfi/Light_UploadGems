@@ -1,6 +1,6 @@
 Light_UploadGems
 ===========
-2020-04-13 -> 2020-10-01
+2020-04-13 -> 2020-10-19
 
 
 
@@ -59,6 +59,10 @@ upload_gems:
 History Log
 =============
 
+- 1.8.2 -- 2020-10-19
+
+    - update GemHelper->transformImage, is now public instead of private
+    
 - 1.8.1 -- 2020-10-01
 
     - update conception notes, grammar fixes

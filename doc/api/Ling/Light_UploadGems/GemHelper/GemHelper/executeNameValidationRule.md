@@ -69,7 +69,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [GemHelper::executeNameValidationRule](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelper.php#L377-L415)
+See the source code for method [GemHelper::executeNameValidationRule](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelper.php#L423-L461)
 
 
 See Also
@@ -77,5 +77,5 @@ See Also
 
 The [GemHelper](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper.md) class.
 
-Previous method: [getCustomConfigValue](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/getCustomConfigValue.md)<br>Next method: [executeValidationRule](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/executeValidationRule.md)<br>
+Previous method: [transformImage](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/transformImage.md)<br>Next method: [executeValidationRule](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/executeValidationRule.md)<br>
 

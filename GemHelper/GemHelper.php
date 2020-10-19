@@ -355,6 +355,52 @@ class GemHelper implements GemHelperInterface
 
 
 
+    /**
+     * Transforms the srcPath image according to the given imageTransformer, and stores it in dstPath.
+     * Returns whether the creation of the copy was successful.
+     *
+     * In case of errors throws exceptions.
+     *
+     *
+     * @param string $srcPath
+     * The path to a supposedly valid image.
+     *
+     * @param string $dstPath
+     * @param string $imageTransformer
+     *
+     * @return bool
+     * @throws \Exception
+     */
+    public function transformImage(string $srcPath, string $dstPath, string $imageTransformer): bool
+    {
+        list($transformerId, $transformerParams) = $this->extractFunctionInfo($imageTransformer);
+        switch ($transformerId) {
+            case "resize":
+                $width = $transformerParams[0] ?? null;
+                $height = $transformerParams[0] ?? null;
+
+
+                $type = MimeTypeTool::getMimeType($srcPath);
+                $extension = substr($type, 6); // strip image/ from the mime type
+
+                $options = [
+                    "extension" => $extension,
+                ];
+                if (true === ThumbnailTool::biggest($srcPath, $dstPath, $width, $height, $options)) {
+                    return true;
+                } else {
+                    $filename = basename($srcPath);
+                    throw new LightUploadGemsException("ThumbnailTool error: couldn't resize the image (filename=\"$filename\").");
+                }
+                break;
+            default:
+                $filename = basename($srcPath);
+                throw new LightUploadGemsException("Bad configuration error: the imageTransformer function $transformerId is not recognized yet (file name=\"$filename\").");
+                break;
+        }
+        return false;
+    }
+
 
     //--------------------------------------------
     //
@@ -566,52 +612,6 @@ class GemHelper implements GemHelperInterface
         ];
     }
 
-
-    /**
-     * Transforms the srcPath image according to the given imageTransformer, and stores it in dstPath.
-     * Returns whether the creation of the copy was successful.
-     *
-     * In case of errors throws exceptions.
-     *
-     *
-     * @param string $srcPath
-     * The path to a supposedly valid image.
-     *
-     * @param string $dstPath
-     * @param string $imageTransformer
-     *
-     * @return bool
-     * @throws \Exception
-     */
-    private function transformImage(string $srcPath, string $dstPath, string $imageTransformer): bool
-    {
-        list($transformerId, $transformerParams) = $this->extractFunctionInfo($imageTransformer);
-        switch ($transformerId) {
-            case "resize":
-                $width = $transformerParams[0] ?? null;
-                $height = $transformerParams[0] ?? null;
-
-
-                $type = MimeTypeTool::getMimeType($srcPath);
-                $extension = substr($type, 6); // strip image/ from the mime type
-
-                $options = [
-                    "extension" => $extension,
-                ];
-                if (true === ThumbnailTool::biggest($srcPath, $dstPath, $width, $height, $options)) {
-                    return true;
-                } else {
-                    $filename = basename($srcPath);
-                    throw new LightUploadGemsException("ThumbnailTool error: couldn't resize the image (filename=\"$filename\").");
-                }
-                break;
-            default:
-                $filename = basename($srcPath);
-                throw new LightUploadGemsException("Bad configuration error: the imageTransformer function $transformerId is not recognized yet (file name=\"$filename\").");
-                break;
-        }
-        return false;
-    }
 
 
     /**
