@@ -59,6 +59,10 @@ upload_gems:
 History Log
 =============
 
+- 1.8.4 -- 2020-10-20
+
+    - add GemHelperTool class
+    
 - 1.8.3 -- 2020-10-20
 
     - remove GemHelperInterface

@@ -83,4 +83,4 @@ See the source code of [Ling\Light_UploadGems\Service\LightUploadGemsService](ht
 
 SeeAlso
 ==============
-Previous class: [GemHelper](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper.md)<br>
+Previous class: [GemHelperTool](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelperTool.md)<br>
