@@ -1,6 +1,6 @@
 Ling/Light_UploadGems
 ================
-2020-04-13 --> 2020-10-19
+2020-04-13 --> 2020-10-20
 
 
 
@@ -22,15 +22,6 @@ Table of contents
     - [GemHelper::getCustomConfig](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/getCustomConfig.md) &ndash; Returns the custom config array attached to this instance.
     - [GemHelper::getCustomConfigValue](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/getCustomConfigValue.md) &ndash; Returns the custom config value corresponding to the given key.
     - [GemHelper::transformImage](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelper/transformImage.md) &ndash; Transforms the srcPath image according to the given imageTransformer, and stores it in dstPath.
-- [GemHelperInterface](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelperInterface.md) &ndash; The GemHelperInterface interface.
-    - [GemHelperInterface::setTags](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelperInterface/setTags.md) &ndash; Sets an array of tags that will be used in the applyCopies method.
-    - [GemHelperInterface::getCustomConfig](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelperInterface/getCustomConfig.md) &ndash; Returns the custom config array attached to this instance.
-    - [GemHelperInterface::getCustomConfigValue](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelperInterface/getCustomConfigValue.md) &ndash; Returns the custom config value corresponding to the given key.
-    - [GemHelperInterface::applyNameTransform](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelperInterface/applyNameTransform.md) &ndash; Applies the defined name transformations to the given filename and returns the transformed filename.
-    - [GemHelperInterface::applyNameValidation](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelperInterface/applyNameValidation.md) &ndash; true if they all pass, or returns the error message returned by the first failing constraint otherwise.
-    - [GemHelperInterface::applyChunkValidation](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelperInterface/applyChunkValidation.md) &ndash; true if they all pass, or returns the error message returned by the first failing constraint otherwise.
-    - [GemHelperInterface::applyValidation](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelperInterface/applyValidation.md) &ndash; true if they all pass, or returns the error message returned by the first failing constraint otherwise.
-    - [GemHelperInterface::applyCopies](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelperInterface/applyCopies.md) &ndash; Make the copies of the file which path was given, based on the defined configuration, and returns the path of the desired copy.
 - [LightUploadGemsService](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/Service/LightUploadGemsService.md) &ndash; The LightUploadGemsService class.
     - [LightUploadGemsService::__construct](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/Service/LightUploadGemsService/__construct.md) &ndash; Builds the LightUploadGemsService instance.
     - [LightUploadGemsService::setContainer](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/Service/LightUploadGemsService/setContainer.md) &ndash; Sets the container.

@@ -4,7 +4,7 @@
 
 The GemHelper class
 ================
-2020-04-13 --> 2020-10-19
+2020-04-13 --> 2020-10-20
 
 
 
@@ -22,7 +22,7 @@ Class synopsis
 ==============
 
 
-class <span class="pl-k">GemHelper</span> implements [GemHelperInterface](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelperInterface.md) {
+class <span class="pl-k">GemHelper</span>  {
 
 - Properties
     - protected array [$config](#property-config) ;
@@ -110,4 +110,4 @@ See the source code of [Ling\Light_UploadGems\GemHelper\GemHelper](https://githu
 
 SeeAlso
 ==============
-Previous class: [LightUploadGemsException](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/Exception/LightUploadGemsException.md)<br>Next class: [GemHelperInterface](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/GemHelper/GemHelperInterface.md)<br>
+Previous class: [LightUploadGemsException](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/Exception/LightUploadGemsException.md)<br>Next class: [LightUploadGemsService](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/Service/LightUploadGemsService.md)<br>

@@ -82,10 +82,10 @@ class LightUploadGemsService
      * Returns a GemHelperInterface associated with the given gemId, or throws an exception otherwise.
      *
      * @param string $gemId
-     * @return GemHelperInterface
+     * @return GemHelper
      * @throws \Exception
      */
-    public function getHelper(string $gemId): GemHelperInterface
+    public function getHelper(string $gemId): GemHelper
     {
         if (false !== strpos($gemId, ".")) {
             list($pluginName, $gemName) = explode(".", $gemId, 2);

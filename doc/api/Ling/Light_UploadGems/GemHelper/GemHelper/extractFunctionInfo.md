@@ -57,7 +57,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [GemHelper::extractFunctionInfo](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelper.php#L600-L613)
+See the source code for method [GemHelper::extractFunctionInfo](https://github.com/lingtalfi/Light_UploadGems/blob/master/GemHelper/GemHelper.php#L661-L674)
 
 
 See Also
