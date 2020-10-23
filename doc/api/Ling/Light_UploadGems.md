@@ -1,6 +1,6 @@
 Ling/Light_UploadGems
 ================
-2020-04-13 --> 2020-10-20
+2020-04-13 --> 2020-10-23
 
 
 
@@ -27,7 +27,6 @@ Table of contents
 - [LightUploadGemsService](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/Service/LightUploadGemsService.md) &ndash; The LightUploadGemsService class.
     - [LightUploadGemsService::__construct](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/Service/LightUploadGemsService/__construct.md) &ndash; Builds the LightUploadGemsService instance.
     - [LightUploadGemsService::setContainer](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/Service/LightUploadGemsService/setContainer.md) &ndash; Sets the container.
-    - [LightUploadGemsService::register](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/Service/LightUploadGemsService/register.md) &ndash; Registers the pluginName.
     - [LightUploadGemsService::getHelper](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/Service/LightUploadGemsService/getHelper.md) &ndash; Returns a GemHelperInterface associated with the given gemId, or throws an exception otherwise.
     - [LightUploadGemsService::checkPhpFile](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/Service/LightUploadGemsService/checkPhpFile.md) &ndash; Checks whether the given php file (usually from $_FILES) is erroneous, and throws an exception if it's the case.
     - [LightUploadGemsService::checkFilename](https://github.com/lingtalfi/Light_UploadGems/blob/master/doc/api/Ling/Light_UploadGems/Service/LightUploadGemsService/checkFilename.md) &ndash; Checks whether the given filename is valid (i.e.
@@ -39,7 +38,7 @@ Dependencies
 - [Light](https://github.com/lingtalfi/Light)
 - [Light_AjaxFileUploadManager](https://github.com/lingtalfi/Light_AjaxFileUploadManager)
 - [ThumbnailTools](https://github.com/lingtalfi/ThumbnailTools)
-- [BabyYaml](https://github.com/lingtalfi/BabyYaml)
+- [Light_Nugget](https://github.com/lingtalfi/Light_Nugget)
 - [PhpFileValidator](https://github.com/lingtalfi/PhpFileValidator)
 
 

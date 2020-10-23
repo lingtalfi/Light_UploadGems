@@ -1,6 +1,6 @@
 Light_UploadGems, conception notes
 =============
-2020-04-10 -> 2020-10-01
+2020-04-10 -> 2020-10-23
 
 
 
@@ -49,26 +49,18 @@ You can use the following methods:
 
 The gem id and the gems organization
 -------------
-2020-04-10
+2020-04-10 -> 2020-10-23
 
 
 The **gem id** is passed by the client, and parsed by our service which returns a helper object.
 
-In order for this system to work, your plugin must first register to our service.
-You can set the path to the **gems directory** if you want, or use our default value. 
+To access the configuration, we use the [Light_Nugget](https://github.com/lingtalfi/Light_Nugget/blob/master/doc/pages/conception-notes.md) system,
+with **relPath** being: 
+
+- Light_UploadGems/gems  
 
 
-Then the **gem id** notation must be follow this convention: 
-
-- gemId: $pluginName.$gemName
-
-
-From that **gem id**, our service will guess the path to the gem file like this:
-
-- gemPath: $gemsDirectory/$gemName.byml
-
-
-That's where your **gem** file should be (otherwise an error will be thrown).
+Please refer to their documentation for more info.
 
 
 
