@@ -542,7 +542,7 @@ class GemHelper
 
 
         $extension = FileSystemTool::getFileExtension($name);
-        $fileName = FileSystemTool::getFileName($name);
+        $fileName = FileSystemTool::getBasename($name);
         list($transformerId, $transformerParams) = GemHelperTool::extractFunctionInfo($nameTransformer);
 
         switch ($transformerId) {

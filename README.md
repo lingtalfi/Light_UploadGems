@@ -1,6 +1,6 @@
 Light_UploadGems
 ===========
-2020-04-13 -> 2020-10-23
+2020-04-13 -> 2020-11-06
 
 
 
@@ -59,6 +59,10 @@ upload_gems:
 History Log
 =============
 
+- 1.8.6 -- 2020-11-06
+
+    - update api to work with Bat 1.279
+    
 - 1.8.5 -- 2020-10-23
 
     - update api using Light_Nugget system to fetch config
